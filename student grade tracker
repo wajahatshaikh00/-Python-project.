@@ -1,0 +1,34 @@
+# Part a: Develop a system for tracking student grades
+students = []
+
+# Part b: Utilize a list to store student names
+student_names = ["Alice", "Bob", "Charlie", "David", "Eva"]
+
+# Part d: Employ a dictionary to store additional information about each student
+student_info = {
+    "Alice": {"contact_info": "alice@email.com", "attendance": 90},
+    "Bob": {"contact_info": "bob@email.com", "attendance": 95},
+    "Charlie": {"contact_info": "charlie@email.com", "attendance": 85},
+    "David": {"contact_info": "david@email.com", "attendance": 92},
+    "Eva": {"contact_info": "eva@email.com", "attendance": 88}
+}
+
+# Part c: Use loops for inputting and updating grades
+for student_name in student_names:
+    # Assuming grades are input interactively
+    grades = []
+    for i in range(3):  # Assuming 3 subjects
+        grade = float(input(f"Enter {student_name}'s grade for subject {i + 1}: "))
+        grades.append(grade)
+
+    # Update student info with grades
+    student_info[student_name]["grades"] = grades
+
+# Display student information
+for student_name, info in student_info.items():
+    print(f"Student: {student_name}")
+    print(f"Contact Info: {info['contact_info']}")
+    print(f"Attendance: {info['attendance']}%")
+    if "grades" in info:
+        print(f"Grades: {info['grades']}")
+    print("----------------------")
